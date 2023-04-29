@@ -1,0 +1,27 @@
+[
+    {
+    "id":1,
+    "sl-no":1,
+    "time":"2021-06-19T09:00:00.000Z",
+    "description":"medicines doasage",
+    "amount":"$20"
+    },
+    {
+        "id":"1",
+        "sl-no":2,
+        "time":"2021-07-19T09:00:00.000Z",
+        "description":"medicines doasage",
+        "amount":"$15"
+
+    },
+    {
+        "id":"1",
+        "sl-no":3,
+        "time":"2021-07-19T09:00:00.000Z",
+        "description":"medicines doasage",
+        "amount":"$15"
+
+    }
+
+
+]

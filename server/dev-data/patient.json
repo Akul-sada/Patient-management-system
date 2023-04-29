@@ -1,0 +1,14 @@
+[
+    {
+        "id":1,
+        "name":"Adam",
+        "place":"Alique",
+        "gender":"M",
+        "blood-group":"B+"
+    
+    },
+    {
+        "id":2,
+        "name":"James"
+    }
+]
