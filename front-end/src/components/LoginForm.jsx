@@ -1,6 +1,25 @@
-import React from 'react'
+import {React, useContext} from 'react'
+import { AuthContext } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+  const { email, setEmail, password, setPassword } = useContext(AuthContext);
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Email: ${email}\nPassword: ${password}`);
+    navigate('/manager');
+  };
   return (
     <>
       <section className="vh-full" style={{ backgroundColor: '#f8f9fa' }}>
@@ -13,19 +32,21 @@ const LoginForm = () => {
                 </div>
 
                 <h5 className="font-medium mb-3 pb-3" style={{ letterSpacing: '1px' }}>Sign into your account</h5>
-                <div className="mb-4">
-                  <label className="block text-slate-700 font-medium mb-2" htmlFor="email">Email address</label>
-                  <input type="email" id="email" className="form-input w-full px-4 py-3 rounded-lg border border-slate-300" />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-slate-700 font-medium mb-2" htmlFor="password">Password</label>
-                  <input type="password" id="password" className="form-input w-full px-4 py-3 rounded-lg border border-slate-300" />
-                </div>
-                <div className="mb-4">
-                  <button className="bg-slate-800 text-white font-medium w-full py-3 rounded-lg">
-                    Login
-                  </button>
-                </div>
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-4">
+                    <label className="block text-slate-700 font-medium mb-2" htmlFor="email">Email address</label>
+                    <input type="email" id="email" className="form-input w-full px-4 py-3 rounded-lg border border-slate-300" value={email} onChange={handleEmailChange}/>
+                  </div>
+                  <div className="mb-4">
+                    <label className="block text-slate-700 font-medium mb-2" htmlFor="password">Password</label>
+                    <input type="password" id="password" className="form-input w-full px-4 py-3 rounded-lg border border-slate-300" value={password} onChange={handlePasswordChange} />
+                  </div>
+                  <div className="mb-4">
+                    <button className="bg-slate-800 text-white font-medium w-full py-3 rounded-lg">
+                      Login
+                    </button>
+                  </div>
+                </form>
                 <a className="block text-sm text-slate-600 mb-5 pb-2" href="#!">Forgot password?</a>
                 <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>Don't have an account?
                   <a href="#!" style={{ color: '#393f81' }} className='mx-1 font-medium'>Register here</a>
