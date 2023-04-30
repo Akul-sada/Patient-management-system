@@ -3,35 +3,42 @@ import React from 'react'
 const LoginForm = () => {
   return (
     <>
-  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+      <section className="vh-full" style={{ backgroundColor: '#f8f9fa' }}>
+        <div className="container py-5 h-100">
+          <div className="flex justify-center items-center h-100">
+            <div className="max-w-sm w-full">
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <div className="flex justify-center mb-8">
+                  <span className="text-2xl font-bold">Logo</span>
+                </div>
 
-  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form class="space-y-6" action="#">
-      <div>
-        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-        <div class="mt-2">
-          <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
-        </div>
-      </div>
-
-      <div>
-        <div class="flex items-center justify-between">
-          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-          <div class="text-sm">
-            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
+                <h5 className="font-medium mb-3 pb-3" style={{ letterSpacing: '1px' }}>Sign into your account</h5>
+                <div className="mb-4">
+                  <label className="block text-slate-700 font-medium mb-2" htmlFor="email">Email address</label>
+                  <input type="email" id="email" className="form-input w-full px-4 py-3 rounded-lg border border-slate-300" />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-slate-700 font-medium mb-2" htmlFor="password">Password</label>
+                  <input type="password" id="password" className="form-input w-full px-4 py-3 rounded-lg border border-slate-300" />
+                </div>
+                <div className="mb-4">
+                  <button className="bg-slate-800 text-white font-medium w-full py-3 rounded-lg">
+                    Login
+                  </button>
+                </div>
+                <a className="block text-sm text-slate-600 mb-5 pb-2" href="#!">Forgot password?</a>
+                <p className="mb-5 pb-lg-2" style={{ color: '#393f81' }}>Don't have an account?
+                  <a href="#!" style={{ color: '#393f81' }} className='mx-1 font-medium'>Register here</a>
+                </p>
+                <div className="flex justify-between text-sm text-slate-600">
+                  <a href="#!" className="underline">Terms of use.</a>
+                  <a href="#!" className="underline">Privacy policy</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="mt-2">
-          <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
-        </div>
-      </div>
-
-      <div>
-        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
-      </div>
-    </form>
-  </div>
-</div>
+      </section>
     </>
   )
 }
