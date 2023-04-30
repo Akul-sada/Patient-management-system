@@ -8,6 +8,8 @@ import cors from 'cors';
 // const router = require('./routes/test');
 const app = express();
 dotenv.config({path:'./config.env'});
+const mongoose = require('mongoose');
+app.use(express.json());
 
 app.get('/',(req,res)=>{
     res.status(200).json({message:"Hello from server side",app:"PatientCarePlus"});
