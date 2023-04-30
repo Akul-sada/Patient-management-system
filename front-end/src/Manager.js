@@ -1,12 +1,16 @@
 import React from 'react';
-import AuthContext from './auth-context';
+import PatientsTable from './components/PatientsTable';
+import SearchBar from './components/SearchBar';
 
 const Manager = () => {
-   
-  return (
 
-    <div>Manager</div>
-  )
+    return (
+        <>
+            <SearchBar />
+            <PatientsTable />
+        </>
+
+    )
 }
 
 export default Manager

@@ -3,12 +3,13 @@
         "id":1,
         "name":"Adam",
         "place":"Alique",
-        "gender":"M",
-        "blood-group":"B+"
+        "gender":"M"
     
     },
     {
         "id":2,
-        "name":"James"
+        "name":"James",
+        "place":"Ceranesi",
+        "gender":"M"
     }
 ]

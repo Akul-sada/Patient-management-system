@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background-color: #334155;
+}
+.add-patient-spacing-left{
+    display: block;
+    margin-left: 2rem;
+}
