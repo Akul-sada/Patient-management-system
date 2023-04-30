@@ -1,14 +1,10 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import mysql from 'mysql';
 import cors from 'cors';
+import mongoose from 'mongoose';
 
-// const dotenv =require('dotenv');
-// const app = require('./app');
-// const router = require('./routes/test');
 const app = express();
 dotenv.config({path:'./config.env'});
-const mongoose = require('mongoose');
 app.use(express.json());
 
 app.get('/',(req,res)=>{
