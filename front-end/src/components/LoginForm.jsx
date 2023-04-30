@@ -1,8 +1,27 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import { AuthContext } from '../context/authContext';
+import { useNavigate } from 'react-router-dom';
 const LoginForm = () => {
+  const {email,setEmail,password,setPassword} =useContext(AuthContext);
+  console.log(email);
+  const handleEmailChange =(e)=>{
+    setEmail(e.target.value);
+  }
+  const handlePasswordChange =(e)=>{
+    setPassword(e.target.value);
+  }
+  const navigate = useNavigate();
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+
+    if(email==='admin@admin.com'&& password==='admin')
+    navigate('/manager');
+ 
+  }
   return (
     <>
+    <form onSubmit={handleSubmit}>
+
   <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
 
   <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -10,7 +29,7 @@ const LoginForm = () => {
       <div>
         <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">Email address</label>
         <div className="mt-2">
-          <input id="email" name="email" type="email"  required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input id="email" name="email" type="email" onChange={handleEmailChange}  required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
 
@@ -19,7 +38,7 @@ const LoginForm = () => {
           <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">Password</label>
         </div>
         <div className="mt-2">
-          <input id="password" name="password" type="password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+          <input id="password" name="password" type="password" onChange={handlePasswordChange} required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
         </div>
       </div>
 
@@ -29,6 +48,7 @@ const LoginForm = () => {
     </form>
   </div>
 </div>
+    </form>
     </>
   )
 }
