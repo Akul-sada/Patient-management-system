@@ -46,6 +46,7 @@ const PatientsTable = () => {
                 <td className="flex items-center px-6 py-4 space-x-3">
                     <Link to="/edit-patient" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                     <Link to="/delete-patient" className="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</Link>
+                    <Link to="/appointments" className="font-medium text-green-600 dark:text-green-500 hover:underline">Appointments</Link>
                 </td>
             </tr>
             

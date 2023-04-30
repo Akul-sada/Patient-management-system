@@ -5,6 +5,7 @@ import { BrowserRouter,Route,Routes } from "react-router-dom";
 import AddPatient from "./components/AddPatient";
 import EditPatient from "./components/EditPatient";
 import DeletePatient from "./components/DeletePatient";
+import Appointments from "./components/Appointments";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/add-patient" element={<AddPatient/>}/>
         <Route path="/edit-patient" element={<EditPatient/>}/>
         <Route path="/delete-patient" element={<DeletePatient/>}/>
+        <Route path="/appointments" element={<Appointments/>}/>
       </Routes>
     </BrowserRouter>
 
