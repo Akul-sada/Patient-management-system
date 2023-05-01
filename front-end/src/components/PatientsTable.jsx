@@ -25,7 +25,9 @@ const PatientsTable = () => {
                     Actions
                     </div>
                     <Link to="/add-patient" className="add-patient-spacing-left space-x-11 font-medium text-blue-600 dark:text-green-500 hover:underline">Add Patient</Link>
+                    <Link to="/login" className="add-patient-spacing-left space-x-11 font-medium text-blue-600 dark:text-yellow-500 hover:underline">Logout</Link>
                 </th>
+                
             </tr>
         </thead>
         <tbody>
