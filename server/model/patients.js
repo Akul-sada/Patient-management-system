@@ -16,3 +16,8 @@ let patientSchema = new mongoose.Schema({
         enum:['m','f']
     }
   });
+
+  const Patient = mongoose.model('Patient',patientSchema);
+
+  export default Patient;
+
