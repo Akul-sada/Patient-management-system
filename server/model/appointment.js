@@ -11,7 +11,10 @@ let appointmentSchema = new mongoose.Schema({
         type:String,
         required:[true,'Patient name cannot be empty']
     },
-    time:{
+    date:{
+        type:Date
+    },
+    gender:{
         type:String,
         required:[true,'Gender cannot be empty'],
         enum:['m','f']
