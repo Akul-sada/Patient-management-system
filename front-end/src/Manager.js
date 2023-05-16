@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PatientsTable from './components/PatientsTable';
 import SearchBar from './components/SearchBar';
+
 
 const Manager = () => {
 
     return (
         <>
             <SearchBar />
-            <PatientsTable />
+            <PatientsTable patientData={patientData} />
         </>
 
     )

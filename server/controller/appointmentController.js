@@ -1,0 +1,1 @@
+import appointmentSchema from "../model/appointment";

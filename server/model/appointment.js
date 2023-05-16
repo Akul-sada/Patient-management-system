@@ -12,7 +12,8 @@ let appointmentSchema = new mongoose.Schema({
         required:[true,'Patient name cannot be empty']
     },
     date:{
-        type:Date
+        type:Date,
+        default:Date.now
     },
     gender:{
         type:String,
@@ -20,12 +21,17 @@ let appointmentSchema = new mongoose.Schema({
         enum:['m','f']
     },
     description:{
-        type: Date,
-      default: Date.now
+        type: String
     }
+  },
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
   });
 
+const Appointment = mongoose.model('Appointment',appointmentSchema);
 
+export default Appointment;
 
 
 

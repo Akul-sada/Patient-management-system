@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 let patientSchema = new mongoose.Schema({
     id:{
-        type:String,
+        type:Number,
         required:[true,'Patient id cannot be empty'],
         unique:true
     },
@@ -14,7 +14,17 @@ let patientSchema = new mongoose.Schema({
         type:String,
         required:[true,'Gender cannot be empty'],
         enum:['m','f']
+    },
+    phone:String
+    ,
+    patient:{
+        type:mongoose.Schema.ObjectId,
+        ref:'Appointment'
     }
+  },
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true }
   });
 
   const Patient = mongoose.model('Patient',patientSchema);
