@@ -1,7 +1,8 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import router from './routes/patientsRoutes.js';
+const express = require('express');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const fs = require('fs')
+
 // import express, { Router } from 'express';
 import Patient from './model/patients.js';
 
@@ -24,6 +25,10 @@ db.once('open',function callback(){
     console.log("Database connected successfully...")
 });
 
+const tours = fs.readFileSync('')
+app.get('api/v1/tours',(req,res)=>{
+
+});
 // Start the server
 // app.get('/',(req,res)=>{
 //     res.status(200).json({message:"Hello from server side",app:"PatientCarePlus"});
@@ -46,6 +51,8 @@ db.once('open',function callback(){
 
 
 // app.use(router);
+
+
 
 const port =process.env.PORT ;
 const server = app.listen(port,()=>{

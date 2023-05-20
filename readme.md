@@ -15,5 +15,9 @@ cd server\
 npm install\
 Which install all the dependencies for Backend
 
+* The image of patients list is below
+![Patients List](./patients.png)
+
+
 
 

@@ -1,5 +1,5 @@
-import express from "express";
-import Patient from "../model/patients";
+const express =require("express");
+const Patient =require("../model/patients");
 const router = express.Router();
 
 

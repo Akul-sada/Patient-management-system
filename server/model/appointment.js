@@ -1,5 +1,5 @@
 
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 let appointmentSchema = new mongoose.Schema({
     id:{
@@ -31,7 +31,7 @@ let appointmentSchema = new mongoose.Schema({
 
 const Appointment = mongoose.model('Appointment',appointmentSchema);
 
-export default Appointment;
+module.exports = Appointment;
 
 
 
