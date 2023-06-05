@@ -10,6 +10,10 @@ let patientSchema = new mongoose.Schema({
         type:String,
         required:[true,'Patient name cannot be empty']
     },
+    age:{
+        type:Number,
+        required:[true,'age cannot be empty']
+    },
     gender:{
         type:String,
         required:[true,'Gender cannot be empty'],
@@ -17,7 +21,11 @@ let patientSchema = new mongoose.Schema({
     },
     phone:String
     ,
-    patient:{
+    place:{
+        type:String,
+        required:[true,'place cannot be empty']
+    },
+    patientsAppointments:{
         type:mongoose.Schema.ObjectId,
         ref:'Appointment'
     }

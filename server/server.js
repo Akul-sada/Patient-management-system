@@ -2,16 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const fs = require('fs')
+const patientsRouter = require("./routes/patientsRoutes.js");
+const appointmentsRouter= require("./routes/appointmentsRoutes.js");
 
-// import express, { Router } from 'express';
-import Patient from './model/patients.js';
-
-// import cors from 'cors';
 const app = express();
+app.use(express.json());
 
-// const dotenv =require('dotenv');
-// const app = require('./app');
-// const router = require('./routes/test');
+
 dotenv.config({path:'./config.env'});
 
 const URI =process.env.DATABASE_ATLAS.replace('<PASSWORD>',process.env.DATABASE_PASSWORD);
@@ -25,36 +22,15 @@ db.once('open',function callback(){
     console.log("Database connected successfully...")
 });
 
-const tours = fs.readFileSync('')
-app.get('api/v1/tours',(req,res)=>{
-
-});
-// Start the server
-// app.get('/',(req,res)=>{
-//     res.status(200).json({message:"Hello from server side",app:"PatientCarePlus"});
-// });
-
-// const testPatient = new Patient({
-//     id:1,
-//     name:'Sadananda',
-//     gender:'m',
-//     phone:'8970289151'
-// });
-// testPatient
-// .save()
-// .then(doc=>{
-//     console.log(doc);
-// })
-// .catch(err=>{
-//     console.log('error:😯',err);
-// });
 
 
-// app.use(router);
+// use patients routes
+app.use(patientsRouter);
+// use appointment routes
 
 
 
 const port =process.env.PORT ;
-const server = app.listen(port,()=>{
+app.listen(port,()=>{
     console.log(`App running on port ${port}...`);
 });

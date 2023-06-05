@@ -4,31 +4,22 @@ const router = express.Router();
 
 
 
-router.post("/addpatient",async(req,res)=>{
-    // console.log(req.body);
-    const {name,email,age,mobile,work,add,desc} = req.body;
-    
-    
-    
-    if(!id || !name || !age || !gender){
-        res.status(422).json("plz fill the data");
-    }
+router.post("/patient",async(req,res)=>{
 
     try {
-        
-        const patientName = await users.findOne({email:email});
-        
-
-        if(patientName){
-            res.status(422).json("this is user is already present");
-        }else{
-
-            // Save data to database pending
-        }
+        const addpatient =new Patient(req.body);
+        addpatient.save()
+        .then(item=>{
+            res.send("item saved to database");
+            console.log(addpatient)
+        })
+        .catch(err=>{
+            res.status(400).send("unable to save to database")
+        });
 
     } catch (error) {
         res.status(422).json(error);
     }
 })
 
-export default router;
+module.exports = router;
