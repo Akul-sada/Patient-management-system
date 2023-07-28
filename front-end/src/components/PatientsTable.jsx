@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navigate,Link } from 'react-router-dom';
 
+
 const PatientsTable = () => {
   return (
     <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

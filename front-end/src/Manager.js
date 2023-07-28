@@ -8,7 +8,7 @@ const Manager = () => {
     return (
         <>
             <SearchBar />
-            <PatientsTable patientData={patientData} />
+            <PatientsTable />
         </>
 
     )

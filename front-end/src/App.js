@@ -9,7 +9,7 @@ import Appointments from "./components/Appointments";
 
 
 function App() {
-  const [isLoggedIn,setIsLoggedIn] = useState(false);
+  // const [isLoggedIn,setIsLoggedIn] = useState(false);
   return (
     <>
   <BrowserRouter>
